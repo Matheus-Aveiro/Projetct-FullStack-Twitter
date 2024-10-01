@@ -13,7 +13,7 @@ SECRET_KEY = "SHA256:WpmOHRjWepIucRljJnZrKP9rkK80wgdBMeHjgGRgkV4"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'aveiromat.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'matheusaf10.pythonanywhere.com']
 
 # Application definition
 
