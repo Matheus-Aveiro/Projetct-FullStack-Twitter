@@ -1,0 +1,5 @@
+LOAD DATABASE
+     FROM sqlite:///db.sqlite3
+     INTO postgresql://postgres:1234@host.docker.internal:5432/postgres
+
+ALTER SCHEMA 'main' RENAME TO 'public';

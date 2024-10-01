@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container text-center d-flex justify-content-center">
+    <div class="row">
+        <div class="Tweetar pt-2 pb-2">
+            {% if form %}
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-secondary">Tweet!</button>
+                </form>
+            {% endif %}
+            {% if not user.is_authenticated %}
+            <h1>Faça Login para postar Tweets!</h1>
+            {% endif %}
+        </div>
+        <div class="feed">
+            <br/>
+                {% for tweet in tweets %}
+                    <div class="alert alert-dark" role="alert">
+                        {{ tweet.body }}<br/>
+                        <small class="text-muted">
+                            ({{ tweet.created_at }}) por @{{ tweet.user.username }}
+                        </small>
+                    </div><br/>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
